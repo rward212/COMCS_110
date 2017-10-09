@@ -1,0 +1,93 @@
+Name and ID:  Roger Ward
+Course and section: COMSC-110-8215
+
+1. Objective (1 sentence brief description of goal): Play a game of RPS between the user and the computer.
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+-userPlay // a user-chosen 0, 1, or 2. Used to generate a r/R, p/P, or s/S. (int)
+-response // users input to repeat game or not (int)
+
+PROCESSING (list of significant parts of the objective that will be the list of code blocks in program):
+1. Generate a random choice for the computer
+2. Obtain a valid input from the user
+3. Output User choice
+4. Output Computer choice
+5. Compare the computer and user values and declare the winner
+6. Update Score
+7. Display Scores
+8. Repeat or exit game
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+-"Welcome to Rock, Paper, Scissors!"
+-"Please enter a choice [r = rock, p = paper, s = scissors, q = quit]"
+-"That's not a valid choice. Please try again."
+-"You win!"
+-"Computer wins!"
+-"It's a tie!"
+-"Would you like to play again? [y = yes, n = no]"
+
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+-randomNumber // a randomly generated 0, 1, or 2. (int)
+-tempPlay // temporary input holder
+-userPlay // a user-chosen r, p, s, or q. (char)
+-userScore // the number of times the user has won (int)
+-computerScore // the number of times the computer has won (int)
+-response // users input to repeat game or not (char)
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output "Welcome to Rock, Paper, Scissors!"
+30 randomNumber = *random number
+40 output "Please enter a choice [r = rock, p = paper, s = scissors, q = quit]"
+45 input userPlay
+50 if userPlay beats randomNumber, go to line 80
+60 if randomNumber beats randomNumber, go to line 90
+70 if userPlay == randomNumber, go to line 100
+75 if userPlay == q, go to line 125
+80 userScore = userScorecore + 1
+85 output "You win!"
+90 computerScore = computerScore + 1
+95 output 'Computer wins!"
+100 output "It's a tie!"
+110 output "Would you like to play again? [y = yes, n = no]"
+115 input response
+120 if response = y, go to line 30, else, go to line 125
+125 output "Your total score: " + userScore
+126 output "Computer score:" + computerScore
+130 output "Thank you for playing Rock, Paper, Scissors! Goodbye!"
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: User's 1st choice is rock, comp. chooses scissors, user plays again and chooses paper, and comp. chooses scissors, user then ends game.
+
+10 output "Welcome to Rock, Paper, Scissors!"
+30 randomNumber = 3
+40 output "Please enter a choice [r = rock, p = paper, s = scissors, q = quit]"
+45 userPlay = 1
+80 userScore = 0 + 1 = 1
+85 output "You win!"
+110 output "Would you like to play again? [y = yes, n = no]"
+115 response = y
+30 randomNumber = 3
+40 output "Please enter a choice [r = rock, p = paper, s = scissors, q = quit]"
+45 userPlay = 2
+50 if userPlay < randomNumber, go to line 90
+90 computerScore = 0 + 1 = 1
+85 output "Computer wins!"
+110 output "Would you like to play again? [y = yes, n = no]"
+115 response = n
+125 output "Your total score: 1"
+126 output "Computer score: 0"
+130 output "Thank you for playing Rock, Paper, Scissors! Goodbye!"
+999 END
+
+
+
+
+
+
+

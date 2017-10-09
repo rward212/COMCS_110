@@ -1,0 +1,111 @@
+Name and ID:  Roger Ward
+Course and section: COMSC-110-8215
+
+1. Objective (1 sentence brief description of goal): Give the user the information he needs to guess the computer's randomly chosen set of colors within 6 guesses.
+
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+  //solution chars - use to assign solution color counts and for their position
+  char solution1
+  char solution2
+  char solution3
+  char solution4
+
+  //solution color counts - use to compare with guess color counts
+  int solution_reds
+  int solution_yellows
+  int solution_greens
+  int solution_blues
+
+  string user_guess //the user's guess
+
+  //guess chars - use to assign guess color counts
+  char guess1
+  char guess2
+  char guess3
+  char guess4
+
+  //guess color counts - use to compare to solution color counts
+  int guess_reds
+  int guess_yellows
+  int guess_greens
+  int guess_blues
+
+  int correct_colors //use to keep track of the number of correct color's in the user's choice
+  int correct_positions //the number of correct positions of the user's choice. This is more selective
+  int guess_number //this keeps track of how many guesses the user has made
+  
+
+PROCESSING (list of significant parts of the objective that will be the list of code blocks in program):
+  assign solution chars random chars
+  loop through solution chars and assign solution color count values
+
+  break up input into guess chars
+
+  loop through guess chars and assign guess color count values
+
+  loop through guess color counts and compare them to solution color counts, adding +1 to correct_colors if there is a match
+
+  loop through guess chars and compare positions of solution chars, adding +1 to correct_positions for every match
+
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts): 
+  "Welcome to Mastermind!"
+  "by Roger Ward"
+  "Please enter your four choices in the following format: [RYGB]"
+  "Number of correct colors:"
+  "Number of correct positions:"
+  "Choose again"
+  "Correct! you win!"
+  "Would you like to play again? [1: yes, 2: no]"
+
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+-
+
+3. Algorithm instructions (recipe)
+
+10 output "Welcome to Mastermind!"
+11 output "by Roger Ward"
+12 determine how many of each solution color
+14 output "Please enter your four choices in the following format: [RYGB]"
+15 input user_guess
+16 break user_guess apart into chars and assign to guess# variables
+
+17 loop and compare guess# chars and color variables and +1 correct_colors if there is a match
+18 loop through and compare guess# and solution#s and +1 correct position if there is a match
+
+30 if correct_colors and correct_positions both = 4, and guess_number >= 6, break loop and go to step 100
+40 if correct_colors and correct_positions both != 4, and guess_number == 6, go to step 50
+50 output "Number of correct colors:" + correct_colors
+60 output "Number of correct positions:" + correct_positions
+70 output "Choose again"
+75 reset guess color counts, correct_colors, correct_positions to zero
+80 loop back to step 12
+
+
+100 output "Correct! you win!"
+110 output "Would you like to play again? [1: yes, 2: no]"
+
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: solution == RYGB, 1st user_guess = RYGB
+10
+
+999 END
+
+Test case #2: 
+
+
+
+
+
+
+
+
+
+
+
